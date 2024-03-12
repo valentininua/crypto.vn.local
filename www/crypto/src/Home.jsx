@@ -1,5 +1,8 @@
+import PropTypes from 'prop-types'; // Импортируем PropTypes
+
 export default function Home({button, value, title}) {
     const date = new Date()
+
     return (
         <>
             <div className="d-flex p-2 bd-highlight">
@@ -21,3 +24,10 @@ export default function Home({button, value, title}) {
         </>
     );
 }
+
+// Указываем проверку пропсов с помощью PropTypes
+Home.propTypes = {
+    button: PropTypes.string, // Пропс button должен быть string
+    value: PropTypes.any, // Пропс value может быть любого типа
+    title: PropTypes.string.isRequired // Пропс title должен быть строкой и обязателен
+};
